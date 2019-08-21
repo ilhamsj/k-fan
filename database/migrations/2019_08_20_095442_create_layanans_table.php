@@ -19,13 +19,11 @@ class CreateLayanansTable extends Migration
             $table->bigInteger('produk_id')->unsigned()->index();
             $table->timestamps();
             $table->foreign('paket_id')
-                    ->unsigned()
                     ->references('id')
                     ->on('pakets')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
             $table->foreign('produk_id')
-                    ->unsigned()
                     ->references('id')
                     ->on('produks')
                     ->onUpdate('cascade')
