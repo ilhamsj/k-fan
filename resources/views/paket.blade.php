@@ -10,7 +10,13 @@
     <form action="{{ route('paket.store') }}" method="post">
         @csrf
         <p>
-            <input type="text" name="nama" placeholder="Nama Paket" value="{{ old('nama') }}"> <br/>
+            {{ 'hello' == 'hello' ? 'true' : 'false' }}
+            <select name="nama" id="">
+                <option value="{{ old('nama') }}">{{ old('nama') }}</option>
+                @foreach ($items as $item)
+                    <option value="{{ $item->nama }}">{{ $item->nama  }}</option>
+                @endforeach
+            </select>
             @error('nama')
                 {{ $message }}
             @enderror
