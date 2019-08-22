@@ -21,8 +21,7 @@
 <div class="container mb-4">
     <h2>List Paket</h2>
     @forelse ($items as $item)
-        <h3>{{$item->nama}}</h3>
-        {{$item->deskripsi}}
+        {{$item->nama}} <br/>
     @empty
         Empty
     @endforelse

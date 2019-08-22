@@ -3,18 +3,22 @@
     <form action="{{ route('layanan.store') }}" method="post">
         @csrf
         <p>
-            <select name="nama[]" multiple="multiple" class="js-example-basic-single">
-                @foreach ($produks as $item)
-                    <option value="{{ $item->nama }}">{{ $item->nama  }}</option>
+            <select name="paket_id" class="js-example-basic-single">
+                @foreach ($items as $item)
+                    <option value="{{ $item->id }}">{{ $item->nama  }}</option>
                 @endforeach
             </select>
-            @error('nama')
+            @error('paket_id')
                 {{ $message }}
             @enderror
         </p>
         <p>
-            <input type="text" name="deskripsi" placeholder="Deskripsi Paket" value="{{ old('deskripsi') }}"> <br/>
-            @error('deskripsi')
+            <select name="produk_id[]" multiple="multiple" class="js-example-basic-single">
+                @foreach ($produks as $item)
+                    <option value="{{ $item->id }}">{{ $item->nama  }}</option>
+                @endforeach
+            </select>
+            @error('produk_id')
                 {{ $message }}
             @enderror
         </p>
@@ -25,7 +29,9 @@
 <div class="container mt-4">
     <h2>List Layanan</h2>
     @forelse ($layanans as $item)
-        <h3>{{$item->paket_id}}</h3>
+        <p>
+            {{$item->paket_id}}
+        </p>
     @empty
         Empty
     @endforelse

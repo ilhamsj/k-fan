@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Paket;
+use App\Produk;
 use App\Layanan;
+use App\Http\Requests\StorePaketRequest;
+use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -35,7 +39,16 @@ class LayananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->produk_id as $produk) {
+            Layanan::create([
+                'paket_id' => $request->paket_id,
+                'produk_id' => $produk,
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'status' => $request->nama . ' Paket Berhasil ditambahkan'
+        ]);
     }
 
     /**
