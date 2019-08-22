@@ -24,7 +24,7 @@ class StorePaketRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|string',
+            'nama' => 'required',
             'deskripsi' => 'required|min:10',
         ];
     }

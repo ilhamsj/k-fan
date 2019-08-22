@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -10,9 +10,7 @@
     <form action="{{ route('paket.store') }}" method="post">
         @csrf
         <p>
-            {{ 'hello' == 'hello' ? 'true' : 'false' }}
-            <select name="nama" id="">
-                <option value="{{ old('nama') }}">{{ old('nama') }}</option>
+            <select name="nama[]" multiple="multiple" class="js-example-basic-single">
                 @foreach ($items as $item)
                     <option value="{{ $item->nama }}">{{ $item->nama  }}</option>
                 @endforeach
@@ -42,8 +40,15 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2({
+                placeholder: "Pilih Paket",
+            });
+        });
+    </script>
     @if (session('status'))
         <script>
             Swal.fire({
