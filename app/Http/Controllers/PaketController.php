@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Paket;
+use App\Produk;
+use App\Layanan;
 use App\Http\Requests\StorePaketRequest;
+use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Request;
 
 class PaketController extends Controller
 {
     public function index()
     {
-        return view('paket')->with([
+        return view('index')->with([
             'items' => Paket::all(),
+            'produks' => Produk::all(),
+            'layanans' => Layanan::all(),
         ]);
     }
 
@@ -22,14 +27,9 @@ class PaketController extends Controller
 
     public function store(StorePaketRequest $request)
     {
-        foreach ($request->nama as $item) {
-            Paket::create([
-                'nama' => $item,
-                'deskripsi' => $request->deskripsi,
-            ]);
-        }
+        Paket::create($request->validated());
         return redirect()->back()->with([
-            'status' => count($request->nama) . ' Paket Berhasil ditambahkan'
+            'status' => $request->nama . ' Paket Berhasil ditambahkan'
         ]);
     }
 

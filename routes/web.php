@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/paket', 'PaketController@index')->name('paket.index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/home', 'PaketController@store')->name('paket.store');
+
+Route::resource('produk', 'ProdukController');
+Route::resource('paket', 'PaketController');
+Route::resource('layanan', 'LayananController');

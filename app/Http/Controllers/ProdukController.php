@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Paket;
 use App\Produk;
+use App\Layanan;
+use App\Http\Requests\StorePaketRequest;
+use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -33,10 +37,15 @@ class ProdukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+    public function store(StoreProdukRequest $request)
     {
-        //
+        Produk::create($request->validated());
+        return redirect()->back()->with([
+            'status' => $request->nama . ' Paket Berhasil ditambahkan'
+        ]);
     }
+
 
     /**
      * Display the specified resource.
