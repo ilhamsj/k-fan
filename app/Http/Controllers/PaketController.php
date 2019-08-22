@@ -23,7 +23,9 @@ class PaketController extends Controller
     public function store(StorePaketRequest $request)
     {
         Paket::create($request->validated());
-        return redirect()->back();
+        return redirect()->back()->with([
+            'status' => 'Paket '. $request->nama . 'Berhasil ditambahkan'
+        ]);
     }
 
     public function show(Request $id)

@@ -5,6 +5,7 @@
 @endpush
 
 @section('content')
+
 <div class="container">
     <form action="{{ route('paket.store') }}" method="post">
         @csrf
@@ -36,29 +37,15 @@
 
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
-
-    {{-- SweetAlert2 --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script>
-    <script>
-        Swal.fire({
-            title: 'Warning!',
-            text: 'Do you want to continue',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Cool',
-            cancelButtonText: 'Cool'
-        })
-
-        $('#save').click(function () { 
+    <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+    @if (session('status'))
+        <script>
             Swal.fire({
-                title: 'Warning!',
-                text: 'Do you want to continue',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Cool',
-                cancelButtonText: 'Cool'
-            })            
-        });
-    </script>
-
+                title: 'Success!',
+                text: '{{ session('status') }}',
+                type: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
 @endpush
