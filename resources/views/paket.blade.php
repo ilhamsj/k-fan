@@ -22,6 +22,9 @@
     <h2>List Paket</h2>
     @forelse ($items as $item)
         {{$item->nama}} <br/>
+        @foreach ($item->layanan as $itemLayanan)
+            {{$itemLayanan->id}}
+        @endforeach
     @empty
         Empty
     @endforelse

@@ -30,7 +30,8 @@
     <h2>List Layanan</h2>
     @forelse ($layanans as $item)
         <p>
-            {{$item->paket_id}}
+            Paket : {{$item->paket->nama}}
+            Produk : {{$item->produk->nama}}
         </p>
     @empty
         Empty

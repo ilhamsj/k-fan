@@ -10,4 +10,9 @@ class Paket extends Model
         'nama',
         'deskripsi',
     ];
+
+    public function layanan()
+    {
+        return $this->hasMany(Layanan::class);
+    }
 }
