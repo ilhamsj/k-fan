@@ -20,11 +20,15 @@
 
 <div class="container mb-4">
     <h2>List Paket</h2>
-    @forelse ($items as $item)
-        {{$item->nama}} <br/>
-        @foreach ($item->layanan as $itemLayanan)
-            {{$itemLayanan->id}}
-        @endforeach
+    @forelse ($pakets as $item)
+        <h4>{{$item->nama}}</h4>
+        <ol type="1">
+            @foreach ($item->layanan as $itemLayanan)
+                <li>
+                    {{$itemLayanan->produk->nama}}
+                </li>
+            @endforeach
+        </ol>
     @empty
         Empty
     @endforelse

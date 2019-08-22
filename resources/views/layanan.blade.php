@@ -4,7 +4,7 @@
         @csrf
         <p>
             <select name="paket_id" class="js-example-basic-single">
-                @foreach ($items as $item)
+                @foreach ($pakets as $item)
                     <option value="{{ $item->id }}">{{ $item->nama  }}</option>
                 @endforeach
             </select>

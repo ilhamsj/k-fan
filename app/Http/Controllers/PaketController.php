@@ -14,9 +14,9 @@ class PaketController extends Controller
     public function index()
     {
         return view('index')->with([
-            'items' => Paket::all(),
-            'produks' => Produk::all(),
-            'layanans' => Layanan::all(),
+            'pakets'    => Paket::all(),
+            'produks'   => Produk::all(),
+            'layanans'  => Layanan::all(),
         ]);
     }
 
