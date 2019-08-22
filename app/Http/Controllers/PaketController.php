@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Paket;
+use App\Http\Requests\StorePaketRequest;
 use Illuminate\Http\Request;
 
 class PaketController extends Controller
@@ -19,9 +20,9 @@ class PaketController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(StorePaketRequest $request)
     {
-        Paket::create($request->all());
+        Paket::create($request->validated());
         return redirect()->back();
     }
 
