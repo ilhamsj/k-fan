@@ -13,18 +13,28 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Actions</th>
+                        <th>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                Tambah User 
+                            </button>
+                            </span>
+                        </th>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
 </div>
+
+@include('admin._addUser')
+
 @endsection
 
 @push('scripts')
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 <script>
     $(function() {
         $.ajaxSetup({
@@ -58,6 +68,33 @@
                 },
                 error: function (data) {
                     console.log('Error:', data);
+                }
+            });
+        });
+
+        
+    });
+    
+    // Create Data
+    jQuery(document).ready(function(){
+        jQuery('#ajaxSubmit').click(function(e){
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ route('user.store') }}",
+                method: 'post',
+                data: {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                },
+                success: function(result){
+                    jQuery('.alert').show();
+                    jQuery('.alert').html(result.success);
                 }
             });
         });

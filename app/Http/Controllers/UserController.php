@@ -28,7 +28,12 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        //
+        User::create(
+            $request->all()
+        );
+        return response()->json([
+            'success' => 'data berhasil ditambahkan'
+        ]);
     }
 
     public function show($id)
