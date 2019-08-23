@@ -5,9 +5,9 @@
 @endpush
 
 @section('content')
-    @include('produk')
-    @include('paket')
-    @include('layanan')
+    @include('_produk')
+    @include('_paket')
+    @include('_layanan')
 @endsection
 
 @push('scripts')

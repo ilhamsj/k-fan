@@ -6,7 +6,6 @@ use App\Paket;
 use App\Produk;
 use App\Layanan;
 use App\Http\Requests\StorePaketRequest;
-use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Request;
 
 class PaketController extends Controller

@@ -37,5 +37,4 @@
         Empty
     @endforelse
 </div>
-
 <hr>
