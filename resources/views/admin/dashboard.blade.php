@@ -33,10 +33,11 @@
             }
         });
 
+        // Display The data
         var table = $('#users-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: 'admin/user',
+            ajax: 'user',
             columns: [
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
@@ -44,13 +45,14 @@
             ]
         });
 
+        // Delete Data
         $('body').on('click', '.deleteUser', function () {
             var user_id = $(this).data("id");
             confirm("Are You sure want to delete " + user_id);
 
             $.ajax({
                 type: "DELETE",
-                url: "pegawai/"+user_id,
+                url: "user/"+user_id,
                 success: function (data) {
                     table.draw();
                 },
@@ -60,6 +62,5 @@
             });
         });
     });
-
     </script>
 @endpush

@@ -19,6 +19,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('produk', 'ProdukController');
 Route::resource('paket', 'PaketController');
 Route::resource('layanan', 'LayananController');
+Route::resource('user', 'UserController');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/user', 'AdminController@userData');
+Route::post('/admin/{id}', 'AdminController@destroy');
