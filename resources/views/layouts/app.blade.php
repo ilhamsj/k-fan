@@ -72,6 +72,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('layouts._footer')
     </div>
     @stack('scripts')
 </body>
