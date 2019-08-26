@@ -22,5 +22,5 @@ Route::resource('layanan', 'LayananController');
 Route::resource('user', 'UserController');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/admin/user', 'AdminController@userData');
+Route::get('/admin/user', 'AdminController@user');
 Route::post('/admin/{id}', 'AdminController@destroy');

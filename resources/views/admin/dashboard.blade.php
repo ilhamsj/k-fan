@@ -47,7 +47,7 @@
         var table = $('#users-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: 'user',
+            ajax: 'http://k-fan.test/user',
             columns: [
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
@@ -62,7 +62,7 @@
                 console.log('true');
                 $.ajax({
                     type: "DELETE",
-                    url: "user/"+user_id,
+                    url: "http://k-fan.test/user/"+user_id,
                     success: function (data) {
                         table.draw();
                     },
