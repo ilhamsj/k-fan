@@ -3,43 +3,31 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-      @php
-          $collection = [
-            'paket' => [
-              'Paket 1' => ['Peti Mati', 'Kremasi'],
-              'Paket 2' => ['Peti Mati', 'Kremasi'],
-              'Paket 3' => ['Peti Mati', 'Kremasi'],
-            ]
-          ];
-      @endphp
-
-
-    <div class="col-md-12 text-center mb-4 mt-4">
-        <h1>Paket yang kami tawarkan</h1>
-    </div>
-      @foreach ($collection as $key => $value)
-        @foreach ($value as $v => $val)
-          <div class="col-md-3 text-center">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="https://picsum.photos/id/157/400/200">
-              <div class="card-body">
-                <h4 class="card-title">{{ $v }} </h4>
-                <p class="card-text">
-                  Harga : 2.000.000
-                </p>
-              </div>
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Item 1</li>
-                  <li class="list-group-item">Item 1</li>
-                  <li class="list-group-item">Item 1</li>
-                  <li class="list-group-item">Item 1</li>
-              </ul>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-success btn-sm">Order</button>
-              </div>
+        <div class="col-md-12 text-center mb-4 mt-4">
+            <h1>Paket yang kami tawarkan</h1>
+        </div>
+        @foreach ($pakets as $paket)
+        <div class="col-md-3 text-center">
+            <div class="card shadow-sm">
+                <img class="card-img-top img-fluid" src="https://picsum.photos/id/157/400/200">
+                <div class="card-body">
+                    <h4 class="card-title">{{ $paket->nama }}</h4>
+                    <p class="card-text">{{ $paket->deskripsi }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach ($paket->layanan as $itemLayanan)
+                            <li class="list-group-item">
+                                {{$itemLayanan->produk->nama}}
+                            </li>
+                    @endforeach
+                </ul>
+                <div class="card-footer">
+                    <a href="" class="btn btn-secondary btn-sm">Details</a>
+                    <a href="" class="btn btn-success btn-sm">Order</a>
+                </div>
             </div>
-          </div>
+        </div>
         @endforeach
-      @endforeach
+    </div>
 </div>
 @endsection
