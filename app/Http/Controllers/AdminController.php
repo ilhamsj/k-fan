@@ -19,4 +19,9 @@ class AdminController extends Controller
             'layanans'  => Layanan::all(),
         ]);
     }
+
+    public function user()
+    {
+        return view('admin.dashboard');
+    }
 }
