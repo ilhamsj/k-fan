@@ -70,22 +70,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-        
-        <footer class="bg-dark">
-            <div class="container py-4">
-                <div class="row justify-content-center text-white">
-                    <div class="col-md-6">
-                        <h3>{{ env('APP_NAME') }}</h3>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae vitae earum unde.
-                        {{ env('APP_NAME') }} {{date('Y')}}
-
-                    </div>
-                    <div class="col-md-4">
-                        Sosial Media
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

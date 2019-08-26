@@ -22,6 +22,7 @@
     <h2>List Paket</h2>
     @forelse ($pakets as $item)
         <h4>{{$item->nama}}</h4>
+        @include('admin._actionButton')
         <ol type="1">
             @foreach ($item->layanan as $itemLayanan)
                 <li>

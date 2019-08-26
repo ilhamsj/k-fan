@@ -34,7 +34,10 @@
 <div class="container mt-4">
     <h2>List Produk</h2>
     @forelse ($produks as $item)
-        {{$item->nama}} <br/>
+        {{$item->nama}} 
+        <a href="{{ route('produk.edit', $item->id) }}">Edit</a>
+        <a href="">Delete</a>
+        <br/>
     @empty
         Empty
     @endforelse

@@ -32,6 +32,7 @@
         <p>
             Paket : {{$item->paket->nama}}
             Produk : {{$item->produk->nama}}
+            @include('admin._actionButton')
         </p>
     @empty
         Empty

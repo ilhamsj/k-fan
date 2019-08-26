@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @push('styles')
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
