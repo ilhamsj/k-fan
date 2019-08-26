@@ -24,3 +24,7 @@ Route::resource('user', 'UserController');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/user', 'AdminController@userData');
 Route::post('/admin/{id}', 'AdminController@destroy');
+
+Route::get('admin/dashboard', function () {
+    return view('layouts.admin');
+});

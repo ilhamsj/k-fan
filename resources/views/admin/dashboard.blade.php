@@ -58,18 +58,19 @@
         // Delete Data
         $('body').on('click', '.deleteUser', function () {
             var user_id = $(this).data("id");
-            confirm("Are You sure want to delete " + user_id);
-
-            $.ajax({
-                type: "DELETE",
-                url: "user/"+user_id,
-                success: function (data) {
-                    table.draw();
-                },
-                error: function (data) {
-                    console.log('Error:', data);
-                }
-            });
+            if (confirm("Are You sure want to delete ? " + user_id) == true) {
+                console.log('true');
+                $.ajax({
+                    type: "DELETE",
+                    url: "user/"+user_id,
+                    success: function (data) {
+                        table.draw();
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+            }
         });
 
         
