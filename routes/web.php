@@ -13,8 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', 'PaketController@index')->name('index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/home', 'HomeController@dashboard')->name('home');
 
 Route::resource('produk', 'ProdukController');
 Route::resource('paket', 'PaketController');
@@ -24,7 +24,3 @@ Route::resource('user', 'UserController');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/user', 'AdminController@userData');
 Route::post('/admin/{id}', 'AdminController@destroy');
-
-Route::get('admin/dashboard', function () {
-    return view('layouts.admin');
-});
