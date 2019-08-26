@@ -28,9 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $paket = Paket::all();
+        $produk = Produk::all();
 
         return view('index')->with([
-            'pakets' => $paket
+            'pakets' => $paket,
+            'produks' => $produk,
         ]);
     }
 
