@@ -5,9 +5,19 @@
 @endpush
 
 @section('content')
-    @include('_produk')
-    @include('_paket')
-    @include('_layanan')
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @include('_produk')
+        </div>
+        <div class="col">
+            @include('_paket')
+        </div>
+        <div class="col">
+            @include('_layanan')
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('scripts')
