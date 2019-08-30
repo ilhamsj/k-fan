@@ -25,9 +25,9 @@ class StoreProdukRequest extends FormRequest
     {
         return [
             'nama'      => 'required',
-            'jumlah'    => 'required',
+            'jumlah'    => 'required|integer|min:2',
             'satuan'    => 'required',
-            'harga'     => 'required',
+            'harga'     => 'required|integer',
         ];
     }
 }

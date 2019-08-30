@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Paket::class, function (Faker $faker) {
     return [
-        'nama'      => $faker->name,
+        'nama'      => "Paket " . $faker->word,
         'deskripsi' => $faker->name,
     ];
 });

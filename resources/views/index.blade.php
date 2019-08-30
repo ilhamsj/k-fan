@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-12 text-center mb-4 mt-4">
+                <div class="col-md-12 mb-4 mt-4">
                     <h3>Paket yang kami tawarkan</h3>
                 </div>
                 @foreach ($pakets as $paket)

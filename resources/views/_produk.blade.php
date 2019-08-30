@@ -1,46 +1,63 @@
 <div class="container">
-    <h2>Tambah Produk</h2>
-    <form action="{{ route('produk.store') }}" method="post">
+    <h2>Produk</h2>
+    <form id="tambahProdukForm" action="{{ route('produk.store') }}" method="post">
         @csrf
-        <p>
-            <input type="text" name="nama" placeholder="Nama Produk"> <br/>
-            @error('nama')
-                {{ $message }}
-            @enderror
-        </p>
-        <p>
-            <input type="number" name="jumlah" placeholder="jumlah Produk"> <br/>
-            @error('jumlah')
-                {{ $message }}
-            @enderror
-        </p>
-        <p>
-            <input type="text" name="satuan" placeholder="satuan Produk"> <br/>
-            @error('satuan')
-                {{ $message }}
-            @enderror
-        </p>
-        <p>
-            <input type="number" name="harga" placeholder="harga Produk"> <br/>
-            @error('harga')
-                {{ $message }}
-            @enderror
-        </p>
+            <div class="form-group">
+                <input class="form-control" type="text" name="nama" placeholder="Nama Produk" value="{{ old('produk') ? old('produk'): "" }}">
+                @error('nama')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="number" name="jumlah" placeholder="Jumlah Produk" value="{{ old('jumlah') ? old('jumlah'): "" }}">
+                @error('jumlah')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+                        
+            <div class="form-group">
+                <input class="form-control" type="text" name="satuan" placeholder="Satuan Produk" value="{{ old('satuan') ? old('satuan'): "" }}">
+                @error('satuan')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+                        
+            <div class="form-group">
+                <input class="form-control" type="number" name="harga" placeholder="Harga Produk" value="{{ old('harga') ? old('harga'): "" }}">
+                @error('harga')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <button type="submit" id="save">Save</button>
+        <button type="submit" id="save" class="btn btn-primary btn-block">Save</button>
     </form>
+    <button id="tambahProdukButton" class="btn btn-primary btn-sm mt-2">Show</button>
 </div>
 
 <div class="container mt-4">
-    <h2>List Produk</h2>
-    @forelse ($produks as $item)
-        {{$item->nama}} 
-        <a href="{{ route('produk.edit', $item->id) }}">Edit</a>
-        <a href="">Delete</a>
-        <br/>
-    @empty
-        Empty
-    @endforelse
+    <div class="table-responsive-sm">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                    <th>Jumlah</th>
+                    <th>Satuan</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($produks as $item)
+                    <tr>
+                        <td>{{$item->nama}}</td>
+                        <td>{{$item->jumlah}}</td>
+                        <td>{{$item->satuan}}</td>
+                        <td>{{$item->harga}}</td>
+                        @empty
+                            <td colspan="4">Empty</td>
+                        @endforelse
+                    </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<hr>

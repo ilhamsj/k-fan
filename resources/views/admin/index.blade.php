@@ -2,6 +2,7 @@
 
 @push('styles')
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -26,7 +27,26 @@
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2({
+                theme: 'bootstrap4',
                 placeholder: "Pilih Paket",
+            });
+
+            $("#tambahProdukForm, #tambahPaketForm, #tambahLayananForm").hide();
+
+            $("#tambahProdukButton").click(function () {
+                $("#tambahProdukForm").slideToggle();
+                var curText = $(this).text() == "Show" ? "Hide": "Show";
+                $(this).html(curText);
+            });
+            $("#tambahPaketButton").click(function () {
+                $("#tambahPaketForm").slideToggle();
+                var curText = $(this).text() == "Show" ? "Hide": "Show";
+                $(this).html(curText);
+            });
+            $("#tambahLayananButton").click(function () {
+                $("#tambahLayananForm").slideToggle();
+                var curText = $(this).text() == "Show" ? "Hide": "Show";
+                $(this).html(curText);
             });
         });
     </script>
