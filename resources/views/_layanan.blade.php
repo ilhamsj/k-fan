@@ -1,40 +1,54 @@
 <div class="container">
-    <h2>Tambah Layanan</h2>
-    <form action="{{ route('layanan.store') }}" method="post">
+    <h2>Layanan</h2>
+    <form id="tambahLayananForm" action="{{ route('layanan.store') }}" method="post">
         @csrf
-        <p>
-            <select name="paket_id" class="js-example-basic-single">
+
+        <div class="form-group"> 
+            <label for="">Pilih Paket</label>
+            <select name="paket_id" class="form-control js-example-basic-single">
                 @foreach ($pakets as $item)
                     <option value="{{ $item->id }}">{{ $item->nama  }}</option>
                 @endforeach
             </select>
             @error('paket_id')
-                {{ $message }}
+                <span class="text-danger">{{ $message }}</span>
             @enderror
-        </p>
-        <p>
-            <select name="produk_id[]" multiple="multiple" class="js-example-basic-single">
+        </div>
+        <div class="form-group">
+            <label for="">Pilih Produk</label>
+            <select name="produk_id[]" multiple="multiple" class="form-control js-example-basic-single">
                 @foreach ($produks as $item)
                     <option value="{{ $item->id }}">{{ $item->nama  }}</option>
                 @endforeach
             </select>
             @error('produk_id')
-                {{ $message }}
+                <span class="text-danger">{{ $message }}</span>
             @enderror
-        </p>
-        <button type="submit" id="save">Save</button>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="save">Save</button>
     </form>
+    <button id="tambahLayananButton" class="btn btn-primary btn-sm mt-2">Show</button>
 </div>
 
 <div class="container mt-4">
-    <h2>List Layanan</h2>
-    @forelse ($layanans as $item)
-        <p>
-            Paket : {{$item->paket->nama}}
-            Produk : {{$item->produk->nama}}
-        </p>
-    @empty
-        Empty
-    @endforelse
+    <div class="table-responsive">
+        <table id="tabelLayanan" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Paket</th>
+                    <th>Layanan</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($layanans as $item)
+                    <tr>
+                        <td scope="row">{{$item->paket->nama}}</td>
+                        <td>{{$item->produk->nama}}</td>
+                    @empty
+                        <td colspan="2">Empty</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 </div>
-<hr>

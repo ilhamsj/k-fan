@@ -7,9 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Produk::class, function (Faker $faker) {
     return [
-        'nama'      => $faker->randomNumber(2),
+        'nama'      => $faker->randomElement(['Kain Kafan', 'Peti Mati', 'Rumah Duka', 'Ambulans', 'Tenaga Pemakaman']) . " " . $faker->word,
         'jumlah'    => $faker->randomNumber(2),
-        'satuan'    => $faker->name,
+        'satuan'    => $faker->word,
         'harga'     => $faker->randomNumber(6),
     ];
 });

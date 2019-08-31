@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-12 text-center mb-4 mt-4">
+                <div class="col-md-12 mb-4 mt-4">
                     <h3>Paket yang kami tawarkan</h3>
                 </div>
                 @foreach ($pakets as $paket)
@@ -64,7 +64,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="" class="btn btn-secondary btn-sm">Details</a>
-                            <a href="" class="btn btn-success btn-sm">Order</a>
+                            <a href="" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modelId">Order</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                 @foreach ($produks as $produk)
                 <div class="col-md-3 mb-4">
                     <div class="card-deck">
-                        <div class="card">
+                        <div class="card text-center">
                             <img class="card-img-top img-fluid" src="https://picsum.photos/400/200" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">
@@ -94,4 +94,6 @@
         </div>
     </div>
 </div>
+
+@include('_order')
 @endsection

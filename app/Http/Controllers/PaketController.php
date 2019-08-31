@@ -24,11 +24,18 @@ class PaketController extends Controller
         //
     }
 
-    public function store(StorePaketRequest $request)
+    public function store(Request $request)
     {
-        Paket::create($request->validated());
+        $count = count($request->nama);
+        for ($i=0; $i < $count; $i++) { 
+            Paket::create([
+                'nama' => $request->nama[$i],
+                'deskripsi' => $request->deskripsi[$i],
+            ]);
+        }
+
         return redirect()->back()->with([
-            'status' => $request->nama . ' Paket Berhasil ditambahkan'
+            'status' => ' Paket Berhasil ditambahkan'
         ]);
     }
 

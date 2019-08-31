@@ -27,6 +27,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 // Select2
 mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/css')
+mix.copy('node_modules/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css', 'public/css')
 mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/js')
 
 // Datatables
