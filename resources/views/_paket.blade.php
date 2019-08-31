@@ -1,5 +1,4 @@
-<div class="container mb-4">
-    <h2>Paket</h2>
+<div class="mb-4">
     <div id="tambahPaketForm">
         <form action="{{ route('paket.store') }}" method="post">
             @csrf
@@ -31,34 +30,33 @@
     <button id="tambahPaketButton" class="btn btn-primary btn-sm mt-2">Show</button>
 </div>
 
-<div class="container mb-4">
-    <div class="table-responsive-sm">
-        <table id="tabelPaket" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Paket</th>
-                    <th>Layanan</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($pakets as $item)
-                <tr>
-                    <td>
-                        {{$item->nama}}
-                    </td>
-                    <td>
-                            @foreach ($item->layanan as $itemLayanan)
-                                {{$itemLayanan->produk->nama}},
-                            @endforeach
-                        </ul>
-                    </td>
-                    @empty
-                    <td colspan="2">Empty</td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div>
+
+<div class="table-responsive-sm">
+    <table id="tabelPaket" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Paket</th>
+                <th>Layanan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($pakets as $item)
+            <tr>
+                <td>
+                    {{$item->nama}}
+                </td>
+                <td>
+                        @foreach ($item->layanan as $itemLayanan)
+                            {{$itemLayanan->produk->nama}},
+                        @endforeach
+                    </ul>
+                </td>
+                @empty
+                <td colspan="2">Empty</td>
+            </tr>
+            @endforelse
+        </tbody>
+    </table>
 </div>
 
 @push('scripts')

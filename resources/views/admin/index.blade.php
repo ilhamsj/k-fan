@@ -5,17 +5,39 @@
     <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
 @endpush
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            @include('_produk')
+        <div class="col-md mb-4">
+            <div class="card shadow bordered">
+                <div class="card-header">
+                    <b class="text-primary">Data Produk</b>
+                </div>
+                <div class="card-body">
+                    @include('_produk')
+                </div>
+            </div>
         </div>
-        <div class="col-md">
-            @include('_paket')
+        <div class="col-md mb-4">
+            <div class="card shadow bordered">
+                <div class="card-header">
+                    <b class="text-primary">Data Paket</b>
+                </div>
+                <div class="card-body">
+                    @include('_paket')
+                </div>
+            </div>
         </div>
-        <div class="col-md">
-            @include('_layanan')
+        <div class="col-md mb-4">
+            <div class="card shadow bordered">
+                <div class="card-header">
+                    <b class="text-primary">Data Layanan</b>
+                </div>
+                <div class="card-body">
+                    @include('_layanan')
+                </div>
+            </div>
         </div>
     </div>
 </div>
