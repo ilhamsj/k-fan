@@ -1,10 +1,8 @@
 @extends('layouts.admin')
 
 @push('styles')
-    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"> --}}
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"> --}}
+    <link href="{{ secure_asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ secure_asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -24,8 +22,8 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/select2.min.js') }}"></script>
-    <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+    <script src="{{ secure_asset('js/select2.min.js') }}"></script>
+    <script src="{{ secure_asset('js/sweetalert2.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2({
