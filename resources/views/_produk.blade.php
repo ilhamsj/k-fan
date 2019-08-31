@@ -37,7 +37,7 @@
 
 <div class="container mt-4">
     <div class="table-responsive-sm">
-        <table class="table table-bordered">
+        <table id="tabelProduk" class="table table-bordered">
             <thead>
                 <tr>
                     <th>Produk</th>

@@ -33,7 +33,7 @@
 
 <div class="container mb-4">
     <div class="table-responsive-sm">
-        <table class="table table-bordered">
+        <table id="tabelPaket" class="table table-bordered">
             <thead>
                 <tr>
                     <th>Paket</th>
@@ -47,9 +47,8 @@
                         {{$item->nama}}
                     </td>
                     <td>
-                        <ul>
                             @foreach ($item->layanan as $itemLayanan)
-                                <li>{{$itemLayanan->produk->nama}}</li>
+                                {{$itemLayanan->produk->nama}},
                             @endforeach
                         </ul>
                     </td>

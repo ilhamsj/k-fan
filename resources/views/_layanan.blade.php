@@ -32,7 +32,7 @@
 
 <div class="container mt-4">
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table id="tabelLayanan" class="table table-bordered">
             <thead>
                 <tr>
                     <th>Paket</th>
