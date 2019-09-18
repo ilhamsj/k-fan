@@ -30,7 +30,7 @@ class HomeController extends Controller
         $paket = Paket::all();
         $produk = Produk::all();
 
-        return view('index')->with([
+        return view('welcome')->with([
             'pakets' => $paket,
             'produks' => $produk,
         ]);

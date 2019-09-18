@@ -34,25 +34,6 @@
 @endpush
 
 @push('scripts')
-    <script>
-        $(document).ready(function() {
-            $('.js-example-basic-single').select2({
-                theme: 'bootstrap4',
-                placeholder: "Pilih Paket",
-            });
-
-            $("#tambahProdukButton").click(function () {
-                $("#tambahProdukForm").slideToggle();
-                var curText = $(this).text() == "Show" ? "Hide": "Show";
-                $(this).html(curText);
-            });
-            $("#tambahPaketButton").click(function () {
-                $("#tambahPaketForm").slideToggle();
-                var curText = $(this).text() == "Show" ? "Hide": "Show";
-                $(this).html(curText);
-            });
-        });
-    </script>
     @if (session('status'))
         <script>
             Swal.fire({
@@ -65,6 +46,11 @@
     @endif
 
     <script>
+        $('.js-example-basic-single').select2({
+            theme: 'bootstrap4',
+            placeholder: "Pilih Paket",
+        });
+
         $(document).ready(function() {
             $('#tabelPaket, #tabelLayanan, #tabelProduk').DataTable( {
                 dom: 'Bfrtip',
@@ -81,12 +67,6 @@
                     // 'colvis',
                 ]
             });
-        });
-
-        $(".card-header").click(function (e) { 
-            e.preventDefault();
-            console.log('safjk');
-            $(this).next().slideToggle('slow');
         });
     </script>
 @endpush

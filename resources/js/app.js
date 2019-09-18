@@ -16,3 +16,6 @@ window.JSZip = jsZip;
 
 require('holderjs');
 require('select2');
+
+import Swal from 'sweetalert2'
+window.Swal = Swal;
