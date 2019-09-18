@@ -32,11 +32,7 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 <script>
-
     var table;
 
     $.ajaxSetup({

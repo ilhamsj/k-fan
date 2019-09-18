@@ -13,3 +13,6 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 import jsZip from 'jszip';
 window.JSZip = jsZip;
+
+require('holderjs');
+require('select2');

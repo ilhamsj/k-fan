@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -31,13 +31,9 @@
 @endsection
 
 @push('styles')
-    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
 @endpush
 
 @push('scripts')
-    <script src="{{ asset('js/select2.min.js') }}"></script>
-    <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2({
