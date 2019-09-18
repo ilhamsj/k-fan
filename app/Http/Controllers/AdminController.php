@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index')->with([
+        return view('admin')->with([
             'pakets'    => Paket::all(),
             'produks'   => Produk::all(),
             'layanans'  => Layanan::all(),

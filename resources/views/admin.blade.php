@@ -23,8 +23,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-4">
-            @include('_layanan')
+        <div class="col-md mb-4">
+            <div class="card shadow bordered">
+                <div class="card-header">
+                    <b class="text-primary">Data Paket</b>
+                </div>
+                <div class="card-body">
+                    @include('_layanan')
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -67,6 +74,11 @@
                     // 'colvis',
                 ]
             });
+        });
+
+        $('.card-header').click(function (e) { 
+            e.preventDefault();
+            $(this).next().slideToggle();
         });
     </script>
 @endpush

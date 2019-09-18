@@ -78,12 +78,10 @@
                 @foreach ($produks as $produk)
                 <div class="col-md-3 mb-4">
                     <div class="card-deck">
-                        <div class="card text-center">
+                        <div class="card">
                             <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
                             <div class="card-body">
-                                <h4 class="card-title">
-                                    {{$produk->nama}}
-                                </h4>
+                                <h5>{{$produk->nama}}</h5>
                             </div>
                         </div>
                     </div>

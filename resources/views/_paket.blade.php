@@ -12,7 +12,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <input type="text" name="deskripsi[]" class="form-control" placeholder="Deskripsi Paket" value="{{ old('deskripsi') ? old('deskripsi'): "ini deskripsi" }}" required>
+                        <input type="text" name="deskripsi[]" class="form-control" placeholder="Deskripsi Paket" value="{{ old('deskripsi') ? old('deskripsi'): "" }}" required>
                         @error('deskripsi')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -27,7 +27,6 @@
             <button id="delete" class="btn btn-danger btn-sm">Delete input</button>
         </div>
     </div>
-    <button id="tambahPaketButton" class="btn btn-primary btn-sm mt-2">Show</button>
 </div>
 
 
