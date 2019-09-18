@@ -1,15 +1,5 @@
 @extends('layouts.admin')
 
-@push('styles')
-    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
-    <style>
-        #tambahProdukForm, #tambahPaketForm, #tambahLayananForm {
-            /* display: none; */
-        }
-    </style>
-@endpush
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -39,6 +29,11 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
+@endpush
 
 @push('scripts')
     <script src="{{ asset('js/select2.min.js') }}"></script>

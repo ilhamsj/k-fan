@@ -11,8 +11,8 @@
             <div class="modal-body">
                 <form id="myForm">
                     <input type="text" name="name" id="name" placeholder="name" value="{{ old('name') }}">
-                    <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
-                    <input type="password" name="password" id="password" value="$2y$10$RHjGX/ocR/waNX8l1kUGReNn.ylkg7bvbmV7he7d4ERuxPwEAg4Hy">
+                    <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" autocomplete="email">
+                    <input type="password" name="password" id="password" value="$2y$10$RHjGX/ocR/waNX8l1kUGReNn.ylkg7bvbmV7he7d4ERuxPwEAg4Hy" autocomplete="new-password">
                     <button class="btn btn-primary" id="ajaxSubmit">Submit</button>
                 </form>
             </div>

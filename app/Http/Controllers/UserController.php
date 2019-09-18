@@ -31,9 +31,7 @@ class UserController extends Controller
         User::create(
             $request->all()
         );
-        return response()->json([
-            'success' => 'data berhasil ditambahkan'
-        ]);
+        return response()->json(array("success"=>true));
     }
 
     public function show($id)

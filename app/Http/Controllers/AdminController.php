@@ -22,6 +22,6 @@ class AdminController extends Controller
 
     public function user()
     {
-        return view('admin.dashboard');
+        return view('_user');
     }
 }
