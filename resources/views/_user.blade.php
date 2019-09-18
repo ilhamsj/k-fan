@@ -49,7 +49,7 @@
         table = $('#users-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: 'http://k-fan.test/user',
+            ajax: '{{route('user.index')}}',
             columns: [
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
@@ -60,11 +60,11 @@
 
     // Delete Data
     $('body').on('click', '.deleteUser', function () {
-        var user_id = $(this).data("id");
-        if (confirm("Are You sure want to delete ? " + user_id) == true) {
+        var url = $(this).data("id");
+        if (confirm("Are You sure want to delete ? " + url) == true) {
             $.ajax({
+                url: url,
                 type: "DELETE",
-                url: "http://k-fan.test/user/"+user_id,
                 success: function (data) {
                     table.draw();
                 },

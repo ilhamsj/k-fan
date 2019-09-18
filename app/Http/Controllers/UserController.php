@@ -15,7 +15,7 @@ class UserController extends Controller
         return Datatables::of($user)
         ->addColumn('action', function($user) {
             $btn = '<a class="btn btn-primary btn-sm" href="'.route('user.edit', $user->id).'">Edit</a>';
-            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$user->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteUser">Delete</a>';
+            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.route('user.destroy', $user->id).'" data-original-title="Delete" class="btn btn-danger btn-sm deleteUser">Delete</a>';
             return $btn;
         })
         ->toJson();
