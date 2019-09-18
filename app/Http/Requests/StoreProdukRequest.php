@@ -24,7 +24,7 @@ class StoreProdukRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama'      => 'required',
+            'nama'      => 'required|unique:produks',
             'jumlah'    => 'required|integer|min:2',
             'satuan'    => 'required',
             'harga'     => 'required|integer',
