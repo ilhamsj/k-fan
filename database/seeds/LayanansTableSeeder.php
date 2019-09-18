@@ -12,6 +12,6 @@ class LayanansTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Layanan::class, 100)->create();
+        factory(Layanan::class, 10)->create();
     }
 }
