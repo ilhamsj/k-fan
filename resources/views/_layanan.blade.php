@@ -40,7 +40,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($layanans as $item)
+            @foreach ($layanans as $item)
                 <tr>
                     <td scope="row">{{$item->paket->nama}}</td>
                     <td>{{$item->produk->nama}}</td>
@@ -52,10 +52,8 @@
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                     </td>
-                @empty
-                    <td colspan="2">Empty</td>
                 </tr>
-            @endforelse
+            @endforeach
         </tbody>
     </table>
 </div>

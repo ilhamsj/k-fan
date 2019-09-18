@@ -39,7 +39,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($pakets as $item)
+            @foreach ($pakets as $item)
             <tr>
                 <td>
                     {{$item->nama}}
@@ -50,10 +50,8 @@
                         @endforeach
                     </ul>
                 </td>
-                @empty
-                <td colspan="2">Empty</td>
             </tr>
-            @endforelse
+            @endforeach
         </tbody>
     </table>
 </div>

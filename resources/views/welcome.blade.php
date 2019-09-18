@@ -82,6 +82,7 @@
                             <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
                             <div class="card-body">
                                 <h5>{{$produk->nama}}</h5>
+                                {{$produk->harga}}
                             </div>
                         </div>
                     </div>

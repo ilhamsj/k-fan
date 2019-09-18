@@ -48,16 +48,14 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($produks as $item)
+                @foreach ($produks as $item)
                     <tr>
                         <td>{{$item->nama}}</td>
                         <td>{{$item->jumlah}}</td>
                         <td>{{$item->satuan}}</td>
                         <td>{{$item->harga}}</td>
-                        @empty
-                            <td colspan="4">Empty</td>
-                        @endforelse
                     </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
