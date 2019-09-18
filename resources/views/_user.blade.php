@@ -7,7 +7,7 @@
             <div class="card shadow">
                 <div class="card-header">
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah User 
+                        <i data-feather="plus"></i>
                     </button>
                 </div>
                 <div class="card-body">
