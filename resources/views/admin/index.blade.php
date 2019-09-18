@@ -3,12 +3,16 @@
 @push('styles')
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/select2-bootstrap4.css') }}" rel="stylesheet" />
+    <style>
+        #tambahProdukForm, #tambahPaketForm, #tambahLayananForm {
+            /* display: none; */
+        }
+    </style>
 @endpush
-
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md mb-4">
             <div class="card shadow bordered">
                 <div class="card-header">
@@ -29,15 +33,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md mb-4">
-            <div class="card shadow bordered">
-                <div class="card-header">
-                    <b class="text-primary">Data Layanan</b>
-                </div>
-                <div class="card-body">
-                    @include('_layanan')
-                </div>
-            </div>
+        <div class="col-md-6 mb-4">
+            @include('_layanan')
         </div>
     </div>
 </div>
@@ -53,8 +50,6 @@
                 placeholder: "Pilih Paket",
             });
 
-            $("#tambahProdukForm, #tambahPaketForm, #tambahLayananForm").hide();
-
             $("#tambahProdukButton").click(function () {
                 $("#tambahProdukForm").slideToggle();
                 var curText = $(this).text() == "Show" ? "Hide": "Show";
@@ -62,11 +57,6 @@
             });
             $("#tambahPaketButton").click(function () {
                 $("#tambahPaketForm").slideToggle();
-                var curText = $(this).text() == "Show" ? "Hide": "Show";
-                $(this).html(curText);
-            });
-            $("#tambahLayananButton").click(function () {
-                $("#tambahLayananForm").slideToggle();
                 var curText = $(this).text() == "Show" ? "Hide": "Show";
                 $(this).html(curText);
             });
@@ -100,6 +90,12 @@
                     // 'colvis',
                 ]
             });
+        });
+
+        $(".card-header").click(function (e) { 
+            e.preventDefault();
+            console.log('safjk');
+            $(this).next().slideToggle('slow');
         });
     </script>
 @endpush
