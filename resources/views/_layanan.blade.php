@@ -45,11 +45,11 @@
                     <td scope="row">{{$item->paket->nama}}</td>
                     <td>{{$item->produk->nama}}</td>
                     <td class="text-center">
-                        <a href="" class="btn btn-outline-secondary btn-sm btn-circle">
-                            <i class="fa fa-edit" aria-hidden="true"></i>
+                        <a href="" class="text-secondary">
+                            <i data-feather="edit"></i>
                         </a>
-                        <a href="" class="btn btn-outline-danger btn-sm btn-circle">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        <a href="" class="text-danger">
+                            <i data-feather="x-circle"></i>
                         </a>
                     </td>
                 </tr>

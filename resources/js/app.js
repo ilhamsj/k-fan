@@ -19,3 +19,6 @@ require('select2');
 
 import Swal from 'sweetalert2'
 window.Swal = Swal;
+
+const feather = require('feather-icons')
+feather.replace()
