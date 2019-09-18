@@ -27,7 +27,7 @@
     </div>
 </div>
 
-@include('admin._addUser')
+@include('admin._create')
 
 @endsection
 
@@ -39,14 +39,14 @@
 
     var table;
 
-    $(document).ready(function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 
-        // Display The data
+    //Display The data
+    $(document).ready(function () {
         table = $('#users-table').DataTable({
             processing: true,
             serverSide: true,
@@ -78,13 +78,8 @@
 
     // Create Data
     $(document).ready(function () {
-        jQuery('#ajaxSubmit').click(function(e){
+        $('#ajaxSubmit').click(function(e){
             e.preventDefault();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                }
-            });
             $.ajax({
                 url: "{{ route('user.store') }}",
                 method: 'post',
