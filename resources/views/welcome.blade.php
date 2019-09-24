@@ -36,16 +36,12 @@
             </div>
             <div class="row">
                 <div class="col-md-12 mb-4 mt-4">
-                    <h3>Paket yang kami tawarkan adalah</h3>
+                    <h3>Paket yang kami tawarkan</h3>
                 </div>
                 @foreach ($pakets as $paket)
                 <div class="col-6 col-md-4 mb-4 text-center">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ $paket->nama }}</h4>
-                            <p class="card-text">{{ $paket->deskripsi }}</p>
-                        </div>
+                    <div class="card h-100 shadow-sm">
+                        <img class="card-img-top" data-src="holder.js/900x600?auto=yes&text={{ $paket->nama }}&random=yes" alt="Second slide">
                         <ul class="list-group list-group-flush">
                             @php
                                 $harga = 0;
@@ -59,10 +55,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <div class="card-body">
-                            Harga {{$harga}}
-                        </div>
-                        <div class="card-footer">
+                        <div class="card-footer mt-auto">
                             <a href="" class="btn btn-secondary btn-sm">Details</a>
                             <a href="" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modelId">Order</a>
                         </div>
@@ -77,7 +70,7 @@
                 </div>
                 @foreach ($produks as $produk)
                 <div class="col-6 col-md-3 mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
                         <div class="card-body">
                             <h5>{{$produk->nama}}</h5>
