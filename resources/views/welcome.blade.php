@@ -34,12 +34,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-md-12 mb-4 mt-4">
                     <h3>Paket yang kami tawarkan</h3>
                 </div>
                 @foreach ($pakets as $paket)
-                <div class="col-md-4 mb-4 text-center">
+                <div class="col-6 col-md-4 mb-4 text-center">
                     <div class="card shadow-sm">
                         <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
                         <div class="card-body">
@@ -76,14 +76,12 @@
                     <h3>Produk yang tersedia</h3>
                 </div>
                 @foreach ($produks as $produk)
-                <div class="col-md-3 mb-4">
-                    <div class="card-deck">
-                        <div class="card">
-                            <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
-                            <div class="card-body">
-                                <h5>{{$produk->nama}}</h5>
-                                {{$produk->harga}}
-                            </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" data-src="holder.js/900x600?auto=yes&textmode=exact&random=yes" alt="Second slide">
+                        <div class="card-body">
+                            <h5>{{$produk->nama}}</h5>
+                            {{$produk->harga}}
                         </div>
                     </div>
                 </div>
